@@ -1,38 +1,224 @@
-.App {
+:root {
+  --primary: #4361ee;
+  --secondary: #3f37c9;
+  --accent: #4895ef;
+  --light: #f8f9fa;
+  --dark: #212529;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  /*background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);*/
+  background-color: #34699A;
+  margin: 0;
+  padding: 0;
+  color: var(--dark);
+  min-height: 100vh;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header & Hero Section */
+
+
+.tagline {
+  margin: 0.5rem 0 0;
+  font-weight: 300;
+  font-size: 1.2rem;
+}
+
+.hero {
+  /*background: linear-gradient(135deg, #4361ee 0%, #3a0ca3 100%);*/
+  background-color: #113F67;
+  color: white;
+  padding: 4rem 1rem;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.hero h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.hero p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto 2rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Feature Section */
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  padding: 4rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #34699A;
+}
+
+.feature-card {
+  text-align: center;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  background: white;
+}
+
+.feature-card:hover {
+  transform: translateY(-50px);
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Call To Action */
+.cta {
+  background: var(--light);
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+.cta h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* Footer */
+.footer {
+  background-color: #58A0C8;
+  color: white;
+  text-align: center;
+  padding: 2rem 0;
+  margin-top: auto;
+  
+}
+
+/* URL Form Styles */
+.url-form {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 600px;
+  text-align: center;
+  margin: 2rem auto;
+}
+
+.url-form h1 {
+  color: #2c3e50;
+  margin-bottom: 1.8rem;
+  font-size: 2.2rem;
+}
+
+.input-group {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  gap: 10px;
+  margin-bottom: 1rem;
+}
+
+input {
+  flex: 1;
+  padding: 12px 15px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  background: var(--primary);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
 }
 
-@keyframes App-logo-spin {
+button:not(:disabled):hover {
+  transform: translateY(-2px);
+}
+
+.result-container {
+  margin-top: 2rem;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.result-box {
+  background: var(--light);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid #e1e1e1;
+}
+
+.short-url {
+  display: block;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+  font-size: 1.1rem;
+  word-break: break-word;
+  padding: 10px;
+  background: white;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.error {
+  color: #e74c3c;
+  margin-top: 1rem;
+  font-weight: 500;
+}
+
+.reset-btn {
+  background: #9b59b6;
+  color: white;
+}
+
+.reset-btn:hover {
+  background: #8e44ad;
+}
+
+@keyframes fadeIn {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
+    transform: translateY(10px);
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+    transform: translateY(0);
   }
 }
